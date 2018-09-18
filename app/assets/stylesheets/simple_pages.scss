@@ -1,3 +1,62 @@
 // Place all the styles related to the simple_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+  font-family: century gothic;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+* {
+  margin: 0;
+  background-color: lavender;
+  text-align: center;
+
+}
+html, body {
+  height: 100%;
+  background-color: lavender;
+
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -142px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 142px;
+}
+.site-footer {
+  background: blue;
+}
+
+//NAV BAR
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: black;
+}
