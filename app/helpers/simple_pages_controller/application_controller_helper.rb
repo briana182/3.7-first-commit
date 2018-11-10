@@ -1,0 +1,2 @@
+module SimplePagesController::ApplicationControllerHelper
+end
