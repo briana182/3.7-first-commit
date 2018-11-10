@@ -6,5 +6,5 @@ class SimplePagesController < ApplicationController
   end
 
   def index
-  end  
+  end
 end
