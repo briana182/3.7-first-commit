@@ -94,3 +94,7 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+
+mode = ENV["SPEC"] || "full"
+require_relative "spec_helper_#{mode}"
