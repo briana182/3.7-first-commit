@@ -1,8 +1,8 @@
 <h2>Featured Product:</h2>
 
 <% def landing_page %>
-  <% @products = Product.limit(4) %>
-<% end %>
+    <% @products = Product.limit(4) %>
+  <% end %>
 
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -15,11 +15,12 @@
   <div class="carousel-inner">
     <% @products.each do |product| %>
 <div class="carousel-item<%= " active" if product == @products.first %>">
-  <%= image_tag(product.image_url) if product.image_url %>
+  <%= image_tag(product.image_url) %>
 
 <br>
 <br>
 <br>
+
       <div class="carousel-caption d-none d-md-block">
         <%= product.name %>
       </div>
