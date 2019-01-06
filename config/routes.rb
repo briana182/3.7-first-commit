@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/products/:id', to: 'products#show'
 
   resources :products
   resources :orders, only: [:index, :show, :create, :destroy]
@@ -9,4 +10,5 @@ Rails.application.routes.draw do
   get 'simple_pages/landing_page'
   root 'simple_pages#landing_page'
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 end
