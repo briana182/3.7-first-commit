@@ -1,29 +1,11 @@
 <p>Product Name: </p>
+<div class="col-sm">
+  <%= image_tag(product.image_url, class: "img-fluid") unless product.image_url.nil? %>
+<h1><%= product.name %></h1></a>
+  <p><%= product.description %></p>
+  <strong><%= product.price %></strong>
+  <p><%= link_to 'Show', product %></p>
+  <p><%= link_to 'Edit', edit_product_path(product) %></p>
+  <p><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 
-<div class="carousel-inner">
-  <div class="carousel-item active">
-    <img alt="Watermelon" src="https://ubisafe.org/images250_/watermelon-drawing-kawaii-3.png" />
-    <div class="carousel-caption d-none d-md-block">
-      <p>Watermelon</p>
-    </div>
-  </div>
-
-  <div class="carousel-item active">
-    <img alt="Watermelon" src="https://ubisafe.org/images250_/watermelon-drawing-kawaii-3.png" />
-    <div class="carousel-caption d-none d-md-block">
-      <p>Seed</p>
-    </div>
-
-    <div class="carousel-item active">
-      <img alt="Watermelon" src="https://ubisafe.org/images250_/watermelon-drawing-kawaii-3.png" />
-      <div class="carousel-caption d-none d-md-block">
-        <p>Test Product</p>
-      </div>
-
-      <div class="carousel-item active">
-        <img alt="Watermelon" src="https://ubisafe.org/images250_/watermelon-drawing-kawaii-3.png" />
-        <div class="carousel-caption d-none d-md-block">
-          <p>Seedless</p>
-        </div>
-  </div>
-</div>
+</div><!-- /col -->
