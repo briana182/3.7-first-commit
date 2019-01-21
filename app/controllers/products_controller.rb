@@ -4,12 +4,18 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    if params[:q]
+      search_term = params[:q]
+      @products = Product.where("name LIKE ?", "%#{search_term}%")
+    else
+      @products = Product.all
+    end
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+
   end
 
   # GET /products/new
@@ -19,21 +25,25 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+
   end
 
   # POST /products
   # POST /products.json
-  def create
-    @product = Product.new(product_params)
 
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render :show, status: :created, location: @product }
-      else
-        format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+
+    def create
+      render text: params
+  @product = Product.new(product_params)
+
+  respond_to do |format|
+    if @product.save
+      format.html { redirect_to @product, notice: 'Product was successfully created.' }
+      format.json { render :show, status: :created, location: @product }
+    else
+      format.html { render :new }
+      format.json { render json: @product.errors, status: :unprocessable_entity }
+    end
     end
   end
 
