@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :products
   resources :orders, only: [:index, :show, :create, :destroy]
+  get 'products/new'
   get 'products/index'
   get 'simple_pages/about'
   get 'simple_pages/contact'
